@@ -17,9 +17,9 @@ fn main() {
             && dir_entry.path().extension().unwrap().to_str().unwrap() == EPUB_EXT
         {
             move_epub(dir_entry.path().to_str().unwrap());
+        } else {
+            clear_if_necessary(&dir_entry, &file_type);
         }
-
-        clear_if_necessary(&dir_entry, &file_type);
     }
 }
 
